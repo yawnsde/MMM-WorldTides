@@ -1,0 +1,26 @@
+{
+  "name": "MMM-Tides",
+  "version": "1.0.0",
+  "description": "MagicMirror2 Module to present low and high water time predictions for given tide stations",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yawnsde/MMM-Tides"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "tide",
+    "high water",
+    "low water",
+    "flood"
+  ],
+  "author": "Stefan Krause",
+  "contributors": "https://github.com/yawnsde/MMM-Tides/graphs/contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yawnsde/MMM-Tides/issues"
+  },
+  "homepage": "https://github.com/yawnsde/MMM-Tides#readme",
+  "dependencies": {
+    }
+}
