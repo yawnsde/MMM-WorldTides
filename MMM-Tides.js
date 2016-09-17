@@ -67,16 +67,81 @@ Module.register('MMM-Tides',{
 			return wrapper;
 		}		
 
-		wrapper.className = "small";
-
-		var platzhalter = document.createElement("span");
-		platzhalter.style.backgroundColor = '#FF0000';
-		
-		for (var i in this.tides) {
-			platzhalter.innerHTML += this.tides[i].type + "&nbsp;";
+		if (!this.tides.length) {
+			wrapper.innerHTML = "No data";
+			wrapper.className = "dimmed light small";
+			return wrapper;
 		}
 
-		wrapper.appendChild(platzhalter);
+		var currentDate = this.tides[0].date;
+
+		var table = document.createElement("table");
+		table.className = "small";
+
+		var row = document.createElement("tr");
+		table.appendChild(row);
+		var dayCell = document.createElement("td");
+		dayCell.className = "day";
+		dayCell.innerHTML = this.tides[0].day;
+		row.appendChild(dayCell);
+
+
+		for (var i in this.tides) {
+
+			var currentTide = this.tides[i];
+
+			if (currentDate != currentTide.date) {				
+				var row = document.createElement("tr");
+				table.appendChild(row);
+				currentDate = currentTide.date;
+
+				var dayCell = document.createElement("td");
+				dayCell.className = "day";
+				dayCell.innerHTML = currentTide.day;
+				row.appendChild(dayCell);
+
+			}
+
+			var tideExtreme1Cell = document.createElement("td");
+			tideExtreme1Cell.innerHTML = currentTide.time;
+			row.appendChild(tideExtreme1Cell);
+
+/*			var icon = document.createElement("span");
+			icon.className = "wi weathericon " + forecast.icon;
+			iconCell.appendChild(icon);
+
+			var maxTempCell = document.createElement("td");
+			maxTempCell.innerHTML = forecast.maxTemp;
+			maxTempCell.className = "align-right bright max-temp";
+			row.appendChild(maxTempCell);
+
+			var minTempCell = document.createElement("td");
+			minTempCell.innerHTML = forecast.minTemp;
+			minTempCell.className = "align-right min-temp";
+			row.appendChild(minTempCell);
+
+			if (this.config.fade && this.config.fadePoint < 1) {
+				if (this.config.fadePoint < 0) {
+					this.config.fadePoint = 0;
+				}
+				var startingPoint = this.forecast.length * this.config.fadePoint;
+				var steps = this.forecast.length - startingPoint;
+				if (f >= startingPoint) {
+					var currentStep = f - startingPoint;
+					row.style.opacity = 1 - (1 / steps * currentStep);
+				}
+			}
+
+
+
+//				platzhalter.innerHTML += this.tides[i].type + "&nbsp;";
+		}
+
+			wrapper.appendChild(platzhalter);
+*/
+		}
+
+		wrapper.appendChild(table);
 
 /*
 		var spacer = document.createElement("span");
@@ -148,7 +213,8 @@ Module.register('MMM-Tides',{
 		params += "&lon=" + this.config.longitude;
 		if(this.config.length !== "") {
 			params += "&length=" + this.config.length;
-		} 		
+		}
+		params += "&start=" + moment().startOf('date').unix();
 		params += "&key=" + this.config.appid;
 
 		return params;
@@ -174,6 +240,8 @@ Module.register('MMM-Tides',{
 			this.tides.push({
 
 				dt: t.dt,
+				date: moment(t.dt, "X").format("YYYY-MM-DD"),
+				day: moment(t.dt, "X").format("ddd"),
 				time: ((this.config.timeFormat === 24) ? moment(t.dt, "X").format("HH:mm") : moment(t.dt, "X").format("hh:mm")), 
 				type: t.type
 			});
