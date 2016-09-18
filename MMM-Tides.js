@@ -212,7 +212,6 @@ Module.register('MMM-Tides',{
 				type: t.type
 			});
 		}
-		Log.error(this.tides);
 
 		this.loaded = true;
 		this.updateDom(this.config.animationSpeed);
