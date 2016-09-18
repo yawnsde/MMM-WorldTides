@@ -39,6 +39,8 @@ Module.register('MMM-Tides',{
 
 		this.updateTimer = null;		
 
+		this.config.header = "HALLO";
+
 		var self = this;
 		setInterval(function() {
 			self.updateDom();
@@ -80,6 +82,23 @@ Module.register('MMM-Tides',{
 
 		var row = document.createElement("tr");
 		table.appendChild(row);
+		var dayHeader = document.createElement("th");
+		dayHeader.className = "day";
+		dayHeader.innerHTML = "&nbsp;";
+		row.appendChild(dayHeader);
+
+		for (var f = 0; f < 4; f++)
+		{
+			var tideSymbol =  document.createElement("span");
+			tideSymbol.className = ( (this.tides[f].type == "Low") ? "fa fa-angle-down" : "fa fa-angle-up" );  
+			var extremeHeader = document.createElement("th");
+			extremeHeader.className = "light small";
+			extremeHeader.appendChild(tideSymbol);
+			row.appendChild(extremeHeader);
+		}
+
+		var row = document.createElement("tr");
+		table.appendChild(row);
 		var dayCell = document.createElement("td");
 		dayCell.className = "day";
 		dayCell.innerHTML = this.tides[0].day;
@@ -102,74 +121,21 @@ Module.register('MMM-Tides',{
 
 			}
 
-			var tideExtreme1Cell = document.createElement("td");
-			tideExtreme1Cell.innerHTML = currentTide.time;
-			row.appendChild(tideExtreme1Cell);
+			var tideExtremeCell = document.createElement("td");
+			tideExtremeCell.style.paddingLeft = "10px";
+			tideExtremeCell.innerHTML = currentTide.time;
 
-/*			var icon = document.createElement("span");
-			icon.className = "wi weathericon " + forecast.icon;
-			iconCell.appendChild(icon);
-
-			var maxTempCell = document.createElement("td");
-			maxTempCell.innerHTML = forecast.maxTemp;
-			maxTempCell.className = "align-right bright max-temp";
-			row.appendChild(maxTempCell);
-
-			var minTempCell = document.createElement("td");
-			minTempCell.innerHTML = forecast.minTemp;
-			minTempCell.className = "align-right min-temp";
-			row.appendChild(minTempCell);
-
-			if (this.config.fade && this.config.fadePoint < 1) {
-				if (this.config.fadePoint < 0) {
-					this.config.fadePoint = 0;
-				}
-				var startingPoint = this.forecast.length * this.config.fadePoint;
-				var steps = this.forecast.length - startingPoint;
-				if (f >= startingPoint) {
-					var currentStep = f - startingPoint;
-					row.style.opacity = 1 - (1 / steps * currentStep);
-				}
+			if ( moment().unix() > currentTide.dt ) {				
+				tideExtremeCell.className = "dimmed light small";
 			}
-
-
-
-//				platzhalter.innerHTML += this.tides[i].type + "&nbsp;";
+			row.appendChild(tideExtremeCell);
 		}
-
-			wrapper.appendChild(platzhalter);
-*/
-		}
-
 		wrapper.appendChild(table);
 
-/*
-		var spacer = document.createElement("span");
-		spacer.innerHTML = "&nbsp;";
-		var temperature_symbol =  document.createElement("span");
-		temperature_symbol.className = "fa fa-home";
-		var humidity_symbol =  document.createElement("span");
-		humidity_symbol.className = "fa fa-tint";
-
-		var temperature = Math.random().toFixed(2);
-		var humidity = Math.random().toFixed(2);
-
-		wrapper.appendChild(temperature_symbol);
-		var temperature_text = document.createElement("span");
-		temperature_text.innerHTML = " " + temperature + "&deg;";
-		wrapper.appendChild(temperature_text);
-
-		wrapper.appendChild(spacer);
-
-		wrapper.appendChild(humidity_symbol);
-		var humidity_text = document.createElement("span");
-		humidity_text.innerHTML = " " + humidity + "%";
-		wrapper.appendChild(humidity_text);
-*/
 		return wrapper;
 	},
 
-	/* updateTides(compliments)
+	/* updateTides
 	 * Requests new data from worldtides.info
 	 * Calls processTides on succesfull response.
 	 */
