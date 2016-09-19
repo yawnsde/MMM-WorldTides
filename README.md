@@ -53,11 +53,6 @@ The following properties can be configured:
 			</td>
 		</tr>
 		<tr>
-			<td><code>displayName</code></td>
-			<td>If you want to display a name for your tidal station instead of longitude and latitude. This field is optional.
-			</td>
-		</tr>
-		<tr>
 			<td><code>length</code></td>
 			<td>The amount of days to be retrieved, provided in seconds.<br>
 				<br><b>Maximum value:</b> <code>604800</code> (7 days)
