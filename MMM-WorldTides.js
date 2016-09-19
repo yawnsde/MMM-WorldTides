@@ -89,9 +89,10 @@ Module.register('MMM-WorldTides',{
 		for (var f = 0; f < 4; f++)
 		{
 			var tideSymbol =  document.createElement("span");
-			tideSymbol.className = ( (this.tides[f].type == "Low") ? "fa fa-angle-down" : "fa fa-angle-up" );  
+			tideSymbol.className = ( (this.tides[f].type == "Low") ? "fa fa-download" : "fa fa-upload" );
 			var extremeHeader = document.createElement("th");
-			extremeHeader.className = "light small";
+			extremeHeader.className = "thin light";
+			extremeHeader.setAttribute("style", "text-align: center");
 			extremeHeader.appendChild(tideSymbol);
 			row.appendChild(extremeHeader);
 		}
