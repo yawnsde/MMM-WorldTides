@@ -12,7 +12,6 @@ Module.register('MMM-Tides',{
 	defaults: {
 		longitude: "",
 		latitude: "",
-		displayName: "",
 		length: "",
 		appid: "",
 		units: config.units,
