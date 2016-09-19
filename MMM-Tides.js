@@ -1,13 +1,13 @@
 /* global Module */
 
 /* Magic Mirror
- * Module: MMM-Tides
+ * Module: MMM-WorldTides
  *
  * By Stefan Krause http://yawns.de
  * MIT Licensed.
  */
 
-Module.register('MMM-Tides',{
+Module.register('MMM-WorldTides',{
 	
 	defaults: {
 		longitude: "",
