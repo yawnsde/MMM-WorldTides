@@ -16,7 +16,7 @@ Module.register('MMM-WorldTides',{
 		appid: "",
 		units: config.units,
 		animationSpeed: 1000,
-		updateInterval: 1000 * 3600 * 24, //update every 24 hours
+		updateInterval: 1000 * 3600, //update every hour
 		timeFormat: config.timeFormat,
 		lang: config.language,
 
