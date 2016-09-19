@@ -1,6 +1,6 @@
 WORK IN PROGRESS!
 
-# MMM-Tides
+# MMM-WorldTides
 
 This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror).
 
@@ -10,7 +10,7 @@ It presents low and high water time predictions for given tide stations. Data is
 ````javascript
 modules: [
 {
-  module: 'MMM-Tides',
+  module: 'MMM-WorldTides',
   position: 'top-right',
   config: {
     longitude: '', //longitude and latitude need to be written with . instead of ,
