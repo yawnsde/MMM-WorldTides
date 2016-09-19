@@ -1,5 +1,3 @@
-WORK IN PROGRESS!
-
 # MMM-WorldTides
 
 This an extension for the [MagicMirror](https://github.com/MichMich/MagicMirror).
