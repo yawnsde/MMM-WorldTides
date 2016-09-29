@@ -208,7 +208,7 @@ Module.register('MMM-WorldTides',{
 				dt: t.dt,
 				date: moment(t.dt, "X").format("YYYY-MM-DD"),
 				day: moment(t.dt, "X").format("ddd"),
-				time: ((this.config.timeFormat === 24) ? moment(t.dt, "X").format("HH:mm") : moment(t.dt, "X").format("hh:mm")), 
+				time: ((this.config.timeFormat === 24) ? moment(t.dt, "X").format("HH:mm") : moment(t.dt, "X").format("hh:mm a")), 
 				type: t.type
 			});
 		}
