@@ -14,7 +14,7 @@ Activate the module by adding it to the config.js file as shown below.
 modules: [
 {
   module: 'MMM-WorldTides',
-  position: 'top-right',
+  position: 'top_right',
   config: {
     longitude: '', //longitude and latitude need to be written with . instead of ,
     latitude: '',
