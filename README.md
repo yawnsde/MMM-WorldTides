@@ -59,7 +59,21 @@ The following properties can be configured:
 			<td><code>length</code></td>
 			<td>The amount of days to be retrieved, provided in seconds.<br>
 				<br><b>Maximum value:</b> <code>604800</code> (7 days)
-				<br><b>Default value:</b>  <code>172800</code>(2 days)
+				<br><b>Default value:</b> <code>172800</code>(2 days)
+			</td>
+		</tr>
+		<tr>
+			<td><code>hightideSymbol</code></td>
+			<td>A custom css value to change the symbol for flood.<br>
+				<br><b>Examples:</b> <code>'wi weathericon wi-flood'</code> (from https://erikflowers.github.io/weather-icons/), <code>'fa fa-level-up'</code> (from http://fontawesome.io/icons/)
+				<br><b>Default value:</b> <code>'fa fa-upload'</code>
+			</td>
+		</tr>		
+		<tr>
+			<td><code>lowtideSymbol</code></td>
+			<td>A custom css value to change the symbol for ebb.<br>
+				<br><b>Examples:</b> see above
+				<br><b>Default value:</b> <code>'fa fa-download'</code>
 			</td>
 		</tr>
 	</tbody>

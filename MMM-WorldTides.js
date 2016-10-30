@@ -20,6 +20,9 @@ Module.register('MMM-WorldTides',{
 		timeFormat: config.timeFormat,
 		lang: config.language,
 
+		lowtideSymbol: "fa fa-download",
+		hightideSymbol: "fa fa-upload",
+
 		initialLoadDelay: 0, // 0 seconds delay
 		retryDelay: 2500,
 
@@ -89,7 +92,7 @@ Module.register('MMM-WorldTides',{
 		for (var f = 0; f < 4; f++)
 		{
 			var tideSymbol =  document.createElement("span");
-			tideSymbol.className = ( (this.tides[f].type == "Low") ? "fa fa-download" : "fa fa-upload" );
+			tideSymbol.className = ( (this.tides[f].type == "Low") ? this.config.lowtideSymbol : this.config.hightideSymbol );
 			var extremeHeader = document.createElement("th");
 			extremeHeader.className = "thin light";
 			extremeHeader.setAttribute("style", "text-align: center");
