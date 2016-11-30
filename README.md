@@ -19,7 +19,7 @@ modules: [
     longitude: '', //longitude and latitude need to be written with . instead of ,
     latitude: '',
     appid: '' //appid needs to be requested from worldtides.info
-  }
+  },
 }
 ````
 
