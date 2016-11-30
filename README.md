@@ -27,54 +27,11 @@ modules: [
 
 The following properties can be configured:
 
-<table width="100%">
-	<!-- why, markdown... -->
-	<thead>
-		<tr>
-			<th>Option</th>
-			<th width="100%">Description</th>
-		</tr>
-	<thead>
-	<tbody>
-	
-		<tr>
-			<td><code>longitude</code></td>
-			<td>The simplest way to get longitude and latitude is to visit http://www.worldtides.info, enter the city you want to add and the website will return the nearest station to your request. Please write down longitude and latitude with . instead of ,<br>
-				<br> This value is <b>REQUIRED</b></code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>latitude</code></td>
-			<td>see above<br>
-				<br> This value is <b>REQUIRED</b></code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>appid</code></td>
-			<td>The <a href="https://www.worldtides.info/developer" target="_blank">Worldtides</a> API key, which can be obtained by creating an account.<br>
-				<br> This value is <b>REQUIRED</b>
-			</td>
-		</tr>
-		<tr>
-			<td><code>length</code></td>
-			<td>The amount of days to be retrieved, provided in seconds.<br>
-				<br><b>Maximum value:</b> <code>604800</code> (7 days)
-				<br><b>Default value:</b> <code>172800</code>(2 days)
-			</td>
-		</tr>
-		<tr>
-			<td><code>hightideSymbol</code></td>
-			<td>A custom css value to change the symbol for flood.<br>
-				<br><b>Examples:</b> <code>'wi weathericon wi-flood'</code> (from https://erikflowers.github.io/weather-icons/), <code>'fa fa-level-up'</code> (from http://fontawesome.io/icons/)
-				<br><b>Default value:</b> <code>'fa fa-upload'</code>
-			</td>
-		</tr>		
-		<tr>
-			<td><code>lowtideSymbol</code></td>
-			<td>A custom css value to change the symbol for ebb.<br>
-				<br><b>Examples:</b> see above
-				<br><b>Default value:</b> <code>'fa fa-download'</code>
-			</td>
-		</tr>
-	</tbody>
-</table>
+| **Option** | **Values** | **Description** |
+| --- | --- | --- |
+| longitude | This value is <b>REQUIRED</b> | The simplest way to get longitude and latitude is to visit http://www.worldtides.info, enter the city you want to add and the website will return the nearest station to your request. Please write down longitude and latitude with . instead of , |
+| latitude | This value is <b>REQUIRED</b> | see above |
+| appid | This value is <b>REQUIRED</b> | The <a href="https://www.worldtides.info/developer" target="_blank">Worldtides</a> API key, which can be obtained by creating an account. |
+| length | Default: <code>172800</code> (2 days)<br>Maximum: <code>604800</code> (7 days) | The amount of days to be retrieved, provided in seconds. |
+| hightideSymbol | Default: <code>'fa fa-upload'</code> | A custom css value to change the symbol for flood. You can use symbols like <code>'wi weathericon wi-flood'</code> (from https://erikflowers.github.io/weather-icons/), <code>'fa fa-level-up'</code> (from http://fontawesome.io/icons/) |
+| lowtideSymbol | Default: <code>'fa fa-download'</code> | A custom css value to change the symbol for ebb. |
