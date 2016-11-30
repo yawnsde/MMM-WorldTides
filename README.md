@@ -29,9 +29,9 @@ The following properties can be configured:
 
 | **Option** | **Values** | **Description** |
 | --- | --- | --- |
-| `longitude` | <b>REQUIRED</b> | The simplest way to get longitude and latitude is to visit [WorldTides](http://www.worldtides.info), enter the city you want to add and the website will return the nearest station to your request. Please write down longitude and latitude with . instead of , |
-| `latitude` | <b>REQUIRED</b> | see above |
-| `appid` | <b>REQUIRED</b> | The [WorldTides API Key](https://www.worldtides.info/developer), which can be obtained by creating an account. |
-| `length` | Default: `172800` (2 days)<br>Maximum: `604800` (7 days) | The amount of days to be retrieved, provided in seconds. |
+| `longitude` | **REQUIRED** | The simplest way to get longitude and latitude is to visit [WorldTides](http://www.worldtides.info), enter the city you want to add and the website will return the nearest station to your request. Please write down longitude and latitude with . instead of , |
+| `latitude` | **REQUIRED** | see above |
+| `appid` | **REQUIRED** | The [WorldTides API Key](https://www.worldtides.info/developer), which can be obtained by creating an account. |
+| `length` | Default: `172800` *(2 days)*<br>Maximum: `604800` *(7 days)* | The amount of days to be retrieved, provided in seconds. |
 | `hightideSymbol` | Default: `'fa fa-upload'` | A custom css value to change the symbol for flood. You can use symbols like `'wi weathericon wi-flood'` [WeatherIcons](https://erikflowers.github.io/weather-icons/), `'fa fa-level-up'` [fontawesome](http://fontawesome.io/icons/) |
 | `lowtideSymbol` | Default: `'fa fa-download'` | A custom css value to change the symbol for ebb. |
