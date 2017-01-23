@@ -8,7 +8,7 @@
  */
 
 Module.register('MMM-WorldTides',{
-	
+
 	defaults: {
 		longitude: "",
 		latitude: "",
@@ -26,12 +26,17 @@ Module.register('MMM-WorldTides',{
 		initialLoadDelay: 0, // 0 seconds delay
 		retryDelay: 2500,
 
-		apiBase: "http://www.worldtides.info/api",				
+		apiBase: "http://www.worldtides.info/api",
 	},
-	
+
 	// Define required scripts.
 	getScripts: function() {
 		return ["moment.js"];
+	},
+
+	// Define requird styles
+	getStyles: function() {
+		return ["font-awesome.css"];
 	},
 
 	start: function() {
@@ -39,7 +44,7 @@ Module.register('MMM-WorldTides',{
 		this.loaded = false;
 		this.scheduleUpdate(this.config.initialLoadDelay);
 
-		this.updateTimer = null;		
+		this.updateTimer = null;
 
 		this.config.header = "HALLO";
 
@@ -69,7 +74,7 @@ Module.register('MMM-WorldTides',{
 			wrapper.innerHTML = this.translate('LOADING');
 			wrapper.className = "dimmed light small";
 			return wrapper;
-		}		
+		}
 
 		if (!this.tides.length) {
 			wrapper.innerHTML = "No data";
@@ -112,7 +117,7 @@ Module.register('MMM-WorldTides',{
 
 			var currentTide = this.tides[i];
 
-			if (currentDate != currentTide.date) {				
+			if (currentDate != currentTide.date) {
 				var row = document.createElement("tr");
 				table.appendChild(row);
 				currentDate = currentTide.date;
@@ -128,7 +133,7 @@ Module.register('MMM-WorldTides',{
 			tideExtremeCell.style.paddingLeft = "10px";
 			tideExtremeCell.innerHTML = currentTide.time;
 
-			if ( moment().unix() > currentTide.dt ) {				
+			if ( moment().unix() > currentTide.dt ) {
 				tideExtremeCell.className = "dimmed light small";
 			}
 			row.appendChild(tideExtremeCell);
@@ -211,7 +216,7 @@ Module.register('MMM-WorldTides',{
 				dt: t.dt,
 				date: moment(t.dt, "X").format("YYYY-MM-DD"),
 				day: moment(t.dt, "X").format("ddd"),
-				time: ((this.config.timeFormat === 24) ? moment(t.dt, "X").format("HH:mm") : moment(t.dt, "X").format("hh:mm a")), 
+				time: ((this.config.timeFormat === 24) ? moment(t.dt, "X").format("HH:mm") : moment(t.dt, "X").format("hh:mm a")),
 				type: t.type
 			});
 		}
