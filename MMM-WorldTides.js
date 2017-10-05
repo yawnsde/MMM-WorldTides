@@ -26,7 +26,7 @@ Module.register('MMM-WorldTides',{
 		initialLoadDelay: 0, // 0 seconds delay
 		retryDelay: 2500,
 
-		apiBase: "http://www.worldtides.info/api",
+		apiBase: "https://www.worldtides.info/api",
 	},
 
 	// Define required scripts.
